@@ -8,7 +8,7 @@ if 'experiment_no' not in st.session_state:
 	st.session_state['experiment_no'] = 0
 	
 if 'df_experiment_results' not in st.session_state:
-	st.session_state['df_experiment_results'] = pd.DataFrame(columns=['no', 'iterations', 'mean'])
+	st.session_state['df_experiment_results'] = pd.DataFrame(columns=['Experiment #', '# of flips', 'mean'])
 
 st.header('Tossing a Coin')
 
@@ -42,7 +42,7 @@ if start_button:
 														  pd.DataFrame(data=[[st.session_state['experiment_no'],
 														  number_of_trials,
 														  mean]],
-														  columns=['no', 'iterations', 'mean'])
+														  columns=['Experiment #', '# of flips', 'mean'])
 														  ],
 														  axis=0)
 	st.session_state['df_experiment_results'] = st.session_state['df_experiment_results'].reset_index(drop=True)
